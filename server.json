@@ -1,0 +1,33 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.vanoe-ai/vanoe-intelligence-mcp",
+  "description": "Stock-market signals for US equities: composite verdicts, trend-stage analysis, Point & Figure, sector breadth, macro regime, SEC filings.",
+  "repository": {
+    "url": "https://github.com/vanoe-ai/vanoe-intelligence-mcp",
+    "source": "github"
+  },
+  "version": "0.1.2",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "vanoe-intelligence-mcp",
+      "version": "0.1.2",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "VANOE_API_KEY",
+          "description": "Your Vanoe Market Intelligence API key (free at https://api.vanoe.ai/signup)",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "VANOE_API_BASE_URL",
+          "description": "API base URL; only override for a self-hosted or local instance",
+          "isRequired": false,
+          "default": "https://api.vanoe.ai"
+        }
+      ]
+    }
+  ]
+}

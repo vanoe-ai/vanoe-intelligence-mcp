@@ -1,0 +1,33 @@
+name: Publish to the MCP registry
+
+# Publishes server.json to registry.modelcontextprotocol.io using GitHub OIDC
+# (no stored secrets). Run it after the matching version is on PyPI: the
+# registry verifies PyPI ownership through the `mcp-name` marker in the
+# package README.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          sudo mv mcp-publisher /usr/local/bin/
+      - name: Check that server.json and pyproject agree on the version
+        run: |
+          v_json=$(python3 -c "import json;print(json.load(open('server.json'))['version'])")
+          v_py=$(python3 -c "import tomllib;print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")
+          test "$v_json" = "$v_py" || { echo "server.json $v_json != pyproject $v_py"; exit 1; }
+      - name: Login (GitHub OIDC)
+        run: mcp-publisher login github-oidc
+      - name: Publish
+        run: mcp-publisher publish

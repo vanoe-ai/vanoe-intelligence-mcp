@@ -31,7 +31,7 @@ from mcp_server import client
 
 mcp = MCPServer(
     name="vanoe-market-intelligence",
-    version="0.1.1",
+    version="0.1.2",
     instructions=(
         "Vanoe Market Intelligence signals: four-stage trend analysis, Point & "
         "Figure patterns, sector breadth, a composite verdict score, macro "

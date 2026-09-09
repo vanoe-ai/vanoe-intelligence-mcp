@@ -1,5 +1,7 @@
 # Vanoe Market Intelligence MCP server
 
+<!-- mcp-name: io.github.vanoe-ai/vanoe-intelligence-mcp -->
+
 Exposes the [Vanoe Market Intelligence API](https://api.vanoe.ai) as tools any
 MCP-capable AI assistant (Claude Desktop, Claude Code, Cursor, etc.) can call
 directly: a composite 0–100 verdict per ticker, trend-stage analysis (current

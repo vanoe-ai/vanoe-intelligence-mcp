@@ -1,0 +1,46 @@
+[project]
+name = "vanoe-intelligence-mcp"
+version = "0.1.1"
+description = "MCP server for the Vanoe Market Intelligence API: composite verdicts, trend-stage analysis, Point & Figure, sector breadth, macro regime and SEC filings as tools for Claude and other MCP clients."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "VanoeAI Ltd", email = "support@vanoe.ai" }]
+requires-python = ">=3.10"
+keywords = ["mcp", "model-context-protocol", "finance", "stocks", "trading", "signals", "claude"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = ["mcp>=2.0,<3.0", "httpx>=0.27"]
+
+[project.urls]
+Homepage = "https://api.vanoe.ai"
+Documentation = "https://api.vanoe.ai/docs"
+"Get an API key" = "https://api.vanoe.ai/signup"
+Source = "https://github.com/vanoe-ai/vanoe-intelligence-mcp"
+Issues = "https://github.com/vanoe-ai/vanoe-intelligence-mcp/issues"
+
+[project.scripts]
+vanoe-intelligence-mcp = "mcp_server.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["mcp_server"]
+license-files = ["LICENSE"]
+
+[tool.setuptools.package-dir]
+mcp_server = "."
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "pytest-asyncio>=0.24"]

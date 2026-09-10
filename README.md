@@ -16,6 +16,19 @@ at https://api.vanoe.ai/signup.
 
 > Informational data only. Not financial advice. See https://api.vanoe.ai/terms.
 
+## Hosted endpoint (no install)
+
+The same tools are served over MCP's streamable HTTP transport by the API
+itself, for clients that take a URL (Claude.ai custom connectors, ChatGPT,
+hosted agent platforms):
+
+- `https://api.vanoe.ai/mcp` with `Authorization: Bearer <your key>`, or
+- `https://api.vanoe.ai/mcp/k/<your key>` for clients that cannot send headers
+  (the key page after signup prints this URL; treat it like a password).
+
+Stateless, JSON responses, metered exactly like the REST API. Use the package
+below when you want the server to run on your own machine.
+
 ## Install
 
 No install step is needed with [uv](https://docs.astral.sh/uv/) — `uvx` fetches

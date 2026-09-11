@@ -1,0 +1,8 @@
+[project]
+name = "vanoe-market-intelligence-mcpb"
+version = "0.1.2"
+description = "Claude Desktop bundle for the Vanoe Market Intelligence MCP server"
+requires-python = ">=3.10"
+dependencies = [
+    "vanoe-intelligence-mcp==0.1.2",
+]

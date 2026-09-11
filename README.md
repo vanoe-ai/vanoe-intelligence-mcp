@@ -31,6 +31,14 @@ hosted agent platforms):
 Stateless, JSON responses, metered exactly like the REST API. Use the package
 below when you want the server to run on your own machine.
 
+## Claude Desktop: one-click install
+
+Download [vanoe-market-intelligence.mcpb](https://github.com/vanoe-ai/vanoe-intelligence-mcp/releases/latest/download/vanoe-market-intelligence.mcpb)
+and open it with Claude Desktop (macOS or Windows). It asks for your API key
+once, stores it securely, and installs the server itself using the `uv`
+runtime. Source of the bundle is in [`mcpb/`](mcpb/); rebuild with
+`npx -ai/mcpb pack mcpb vanoe-market-intelligence.mcpb`.
+
 ## Install
 
 No install step is needed with [uv](https://docs.astral.sh/uv/) — `uvx` fetches

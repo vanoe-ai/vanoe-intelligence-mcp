@@ -1,0 +1,61 @@
+{
+  "manifest_version": "0.4",
+  "name": "vanoe-market-intelligence",
+  "display_name": "Vanoe Market Intelligence",
+  "version": "0.1.2",
+  "description": "US stock signals: a verdict per ticker with reasoning, trend stage, Point & Figure, sector breadth, macro regime, SEC insider filings.",
+  "long_description": "Ask Claude \"should I be accumulating NVDA?\" and get a computed answer: a 0-100 score, an accumulate / hold / distribute / avoid verdict, and the reasoning behind it (trend stage on a 30-week moving average, Point & Figure breakouts and relative strength, SEC Form 4 insider activity, and the macro risk regime). Also: four-stage trend analysis for up to 50 tickers, a backtest-safe weekly stage history, sector bullish-percent breadth, the macro regime with its inputs, insider and 8-K filings per ticker, and the macro calendar.\n\nEvery call is metered against your own free API key (1,000 credits a month, no card) from https://api.vanoe.ai/signup. Informational data only, not financial advice.",
+  "author": {
+    "name": "VanoeAI Ltd",
+    "email": "support@vanoe.ai",
+    "url": "https://api.vanoe.ai"
+  },
+  "homepage": "https://api.vanoe.ai",
+  "documentation": "https://api.vanoe.ai/guides/mcp-claude-chatgpt",
+  "support": "mailto:support@vanoe.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vanoe-ai/vanoe-intelligence-mcp"
+  },
+  "icon": "icon.png",
+  "server": {
+    "type": "uv",
+    "entry_point": "src/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "src/server.py"],
+      "env": {
+        "VANOE_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Vanoe API key",
+      "description": "Your key from https://api.vanoe.ai/signup (free: 1,000 credits a month, no card). Starts with sk_live_.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "tools": [
+    {"name": "get_verdict", "description": "Composite verdict for one ticker: 0-100 score, accumulate/hold/distribute/avoid, per-factor rationale."},
+    {"name": "get_stage", "description": "Trend stage (1 basing, 2 advancing, 3 topping, 4 declining) for up to 50 tickers."},
+    {"name": "get_stage_history", "description": "Weekly trend-stage history for one ticker, walk-forward, up to 520 weeks."},
+    {"name": "get_pnf", "description": "Point & Figure signal, pattern and relative strength vs SPY for up to 50 tickers."},
+    {"name": "get_sector_breadth", "description": "Bullish-percent breadth by sector."},
+    {"name": "get_macro", "description": "Macro regime (risk-on / neutral / risk-off) with rates, inflation, curve and positioning."},
+    {"name": "get_filings", "description": "Recent SEC Form 4 insider transactions and 8-K filings for one ticker."},
+    {"name": "get_calendar", "description": "Upcoming FOMC, CPI and payrolls dates."},
+    {"name": "get_usage", "description": "Credits used and remaining this period (free)."}
+  ],
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  },
+  "keywords": ["stocks", "finance", "trading", "signals", "stage analysis", "point and figure", "insider trading", "macro", "sec filings", "market"],
+  "license": "MIT"
+}

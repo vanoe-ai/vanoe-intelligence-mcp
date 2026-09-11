@@ -92,6 +92,7 @@ right now?"* — it will call the tools below.
 | `get_sector_breadth()` | `GET /v1/sector-breadth` | 1 |
 | `get_macro()` | `GET /v1/macro` | 1 |
 | `get_filings(ticker)` | `GET /v1/filings/{ticker}` | 1 |
+| `get_short_volume(tickers)` | `GET /v1/signals/short-volume` | 1 per ticker |
 | `get_calendar()` | `GET /v1/calendar` | 1 |
 | `get_usage()` | `GET /v1/usage` | 0 |
 

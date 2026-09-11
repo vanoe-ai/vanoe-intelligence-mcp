@@ -31,7 +31,7 @@ from mcp_server import client
 
 mcp = MCPServer(
     name="vanoe-market-intelligence",
-    version="0.1.2",
+    version="0.1.3",
     instructions=(
         "Vanoe Market Intelligence signals: four-stage trend analysis, Point & "
         "Figure patterns, sector breadth, a composite verdict score, macro "
@@ -109,6 +109,15 @@ async def get_verdict(ticker: str) -> str:
 @mcp.tool(description="Recent SEC insider transactions (Form 4) and 8-K filings for one ticker.")
 async def get_filings(ticker: str) -> str:
     return await _call(f"/v1/filings/{ticker}")
+
+
+@mcp.tool(description=(
+    "FINRA daily short-sale volume for up to 50 tickers: share of volume sold short (latest, "
+    "10-day average, trend). Short-sale volume, not short interest; market norm is roughly 40-55%. "
+    "Pass tickers as a comma-separated string."
+))
+async def get_short_volume(tickers: str) -> str:
+    return await _call("/v1/signals/short-volume", {"tickers": tickers})
 
 
 @mcp.tool(description="Upcoming macro events (FOMC, CPI, payrolls) within a look-ahead window in days (default 10, max 60).")

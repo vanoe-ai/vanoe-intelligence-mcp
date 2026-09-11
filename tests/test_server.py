@@ -97,11 +97,11 @@ def test_unexpected_exception_still_returns_error_json_not_raise(monkeypatch):
     assert result["error"]["code"] == "mcp_server_error"
 
 
-def test_all_nine_tools_are_registered():
+def test_all_ten_tools_are_registered():
     expected = {
         "get_macro", "get_stage", "get_stage_history", "get_pnf",
         "get_sector_breadth", "get_verdict", "get_filings", "get_calendar",
-        "get_usage",
+        "get_usage", "get_short_volume",
     }
     tools = asyncio.run(server.mcp.list_tools())
     names = {t.name for t in tools}

@@ -2,6 +2,8 @@
 
 <!-- mcp-name: io.github.vanoe-ai/vanoe-intelligence-mcp -->
 
+[![PyPI](https://img.shields.io/pypi/v/vanoe-intelligence-mcp)](https://pypi.org/project/vanoe-intelligence-mcp/) [![NVDA verdict](https://api.vanoe.ai/badge/NVDA.svg)](https://api.vanoe.ai/try?ticker=NVDA) [![AAPL verdict](https://api.vanoe.ai/badge/AAPL.svg)](https://api.vanoe.ai/try?ticker=AAPL)
+
 Exposes the [Vanoe Market Intelligence API](https://api.vanoe.ai) as tools any
 MCP-capable AI assistant (Claude Desktop, Claude Code, Cursor, etc.) can call
 directly: a composite 0–100 verdict per ticker, trend-stage analysis (current

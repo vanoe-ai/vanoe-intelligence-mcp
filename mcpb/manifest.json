@@ -2,7 +2,7 @@
   "manifest_version": "0.4",
   "name": "vanoe-market-intelligence",
   "display_name": "Vanoe Market Intelligence",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "US stock signals: a verdict per ticker with reasoning, trend stage, Point & Figure, sector breadth, macro regime, SEC insider filings.",
   "long_description": "Ask Claude \"should I be accumulating NVDA?\" and get a computed answer: a 0-100 score, an accumulate / hold / distribute / avoid verdict, and the reasoning behind it (trend stage on a 30-week moving average, Point & Figure breakouts and relative strength, SEC Form 4 insider activity, and the macro risk regime). Also: four-stage trend analysis for up to 50 tickers, a backtest-safe weekly stage history, sector bullish-percent breadth, the macro regime with its inputs, insider and 8-K filings per ticker, and the macro calendar.\n\nEvery call is metered against your own free API key (1,000 credits a month, no card) from https://api.vanoe.ai/signup. Informational data only, not financial advice.",
   "author": {

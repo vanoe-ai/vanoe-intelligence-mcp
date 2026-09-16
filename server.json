@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.vanoe-ai/vanoe-intelligence-mcp",
-  "description": "US stock signals: composite verdict, trend stage, P&F, sector breadth, macro regime, SEC filings.",
+  "description": "Stock verdicts, trend stage, P&F, breadth, macro regime, SEC filings. Free key: api.vanoe.ai/signup",
   "repository": {
     "url": "https://github.com/vanoe-ai/vanoe-intelligence-mcp",
     "source": "github"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "packages": [
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "vanoe-intelligence-mcp",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "transport": { "type": "stdio" },
       "environmentVariables": [
         {

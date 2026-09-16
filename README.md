@@ -4,6 +4,8 @@
 
 [![PyPI](https://img.shields.io/pypi/v/vanoe-intelligence-mcp)](https://pypi.org/project/vanoe-intelligence-mcp/) [![NVDA verdict](https://api.vanoe.ai/badge/NVDA.svg)](https://api.vanoe.ai/try?ticker=NVDA) [![AAPL verdict](https://api.vanoe.ai/badge/AAPL.svg)](https://api.vanoe.ai/try?ticker=AAPL)
 
+**Get a free API key in ten seconds: <https://api.vanoe.ai/signup?src=mcp-readme>** — 1,000 credits a month, no card. The key page also prints the hosted MCP URL to paste into Claude.ai or ChatGPT as a connector.
+
 Exposes the [Vanoe Market Intelligence API](https://api.vanoe.ai) as tools any
 MCP-capable AI assistant (Claude Desktop, Claude Code, Cursor, etc.) can call
 directly: a composite 0–100 verdict per ticker, trend-stage analysis (current
@@ -14,7 +16,7 @@ your usage.
 This is a thin authenticated client, not a free tier: every tool call is a
 real, metered call against your plan using your own API key, exactly like
 calling the REST API yourself. Get a free key (1,000 credits a month, no card)
-at https://api.vanoe.ai/signup.
+at https://api.vanoe.ai/signup?src=mcp-readme.
 
 > Informational data only. Not financial advice. See https://api.vanoe.ai/terms.
 

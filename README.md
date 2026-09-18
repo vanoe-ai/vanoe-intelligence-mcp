@@ -39,7 +39,7 @@ Download [vanoe-market-intelligence.mcpb](https://github.com/vanoe-ai/vanoe-inte
 and open it with Claude Desktop (macOS or Windows). It asks for your API key
 once, stores it securely, and installs the server itself using the `uv`
 runtime. Source of the bundle is in [`mcpb/`](mcpb/); rebuild with
-`npx -ai/mcpb pack mcpb vanoe-market-intelligence.mcpb`.
+`npx @anthropic-ai/mcpb pack mcpb vanoe-market-intelligence.mcpb`.
 
 ## Install
 

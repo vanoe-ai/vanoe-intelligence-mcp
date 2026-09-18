@@ -6,13 +6,13 @@
     "url": "https://github.com/vanoe-ai/vanoe-intelligence-mcp",
     "source": "github"
   },
-  "version": "0.1.5",
+  "version": "0.1.6",
   "packages": [
     {
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "vanoe-intelligence-mcp",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "transport": { "type": "stdio" },
       "environmentVariables": [
         {

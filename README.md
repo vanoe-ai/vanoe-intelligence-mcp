@@ -16,7 +16,7 @@ your usage.
 This is a thin authenticated client, not a free tier: every tool call is a
 real, metered call against your plan using your own API key, exactly like
 calling the REST API yourself. Get a free key (1,000 credits a month, no card)
-at https://api.vanoe.ai/signup?src=mcp-readme.
+here: <https://api.vanoe.ai/signup?src=mcp-readme>
 
 > Informational data only. Not financial advice. See https://api.vanoe.ai/terms.
 
